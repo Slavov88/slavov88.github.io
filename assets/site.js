@@ -20,7 +20,7 @@ function buildMailto(recipient, values) {
   if (!validateMessage(values).valid) throw new Error('Please complete the required fields.');
   const name = values.name.trim();
   const email = values.email.trim();
-  const subject = `Portfolio enquiry — ${name}`;
+  const subject = `Portfolio enquiry from ${name}`;
   const body = `Name: ${name}\nReply email: ${email}\n\n${values.message.trim()}`;
   return `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
